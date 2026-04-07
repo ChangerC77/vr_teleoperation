@@ -25,14 +25,14 @@
 根据实际电脑系统选择对应的软件安装
 <a id="windows"></a>
 ### 1.1 Windows
-software can find in `release/SideQuest-Setup-0.10.39-x64-win.exe`
+software can find in `release中的SideQuest-Setup-0.10.39-x64-win.exe`
 <a id="mac"></a>
 ### 1.2 Mac
-software can find in `release/SideQuest-0.10.42.dmg`
+software can find in `release中的SideQuest-0.10.42.dmg`
 
 <a id="install-apk-in-vr"></a>
 ## 2. install apk in VR
-software can find in `release/app1_16_vis_quest_xyz_final_version.apk`
+software can find in `release中的app1_16_vis_quest_xyz_final_version.apk`
 
 <a id="sidequest"></a>
 ## 3. SideQuest
@@ -96,7 +96,7 @@ https://developer.oculus.com/sign-up/
 ### 3.3 Upload APK file to VR 
 <img src='img/9.png'>
 
-红色箭头位置点击选择`APK`文件(path: `APP/app1_16_vis_quest_xyz_final_version.apk`)上传给VR设备，上传完成后会在左下角显示`ALL tasks completed`
+红色箭头位置点击选择`APK`文件(path: `release中的app1_16_vis_quest_xyz_final_version.apk`)上传给VR设备，上传完成后会在左下角显示`ALL tasks completed`
 
 <a id="vr"></a>
 ## 4. VR
@@ -160,7 +160,8 @@ sudo apt update
 sudo apt install android-tools-adb android-tools-fastboot
 ```
 <details>
-<summary>output></summary>
+<summary>output</summary>
+```
 获取:1 http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu focal InRelease [4,679 B]
 命中:2 http://mirrors.ustc.edu.cn/ubuntu focal InRelease                       
 命中:3 http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu focal InRelease         
@@ -363,6 +364,7 @@ sudo apt install android-tools-adb android-tools-fastboot
 正在处理用于 man-db (2.9.1-1) 的触发器 ...
 正在处理用于 initramfs-tools (0.136ubuntu6.7) 的触发器 ...
 update-initramfs: Generating /boot/initrd.img-5.15.0-139-generic
+```
 </details>
 
 ##### 5.3.1.2 手动安装最新版本（推荐进阶用户）
@@ -375,7 +377,7 @@ update-initramfs: Generating /boot/initrd.img-5.15.0-139-generic
 sudo apt install wget
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip -O platform-tools.zip
 ```
-
+if network connection unstable, you also can find the zip in release part
 ###### 5.3.1.2.2 解压并配置路径
 ```
 # 解压到用户目录（例如 ~/android-sdk）
