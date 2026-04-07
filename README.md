@@ -1,21 +1,46 @@
 # Meta Quest 3 VR Teleoperation
 通过软件实现对于VR设备的激活、下载APP和传输文件
 根据自己的电脑系统选择下面的APP
+
+## Outline
+- [1. Meta SideQuest Softare Installation](#meta-sidequest-software-installation)
+  - [1.1 Windows](#windows)
+  - [1.2 Mac](#mac)
+- [2. install apk in VR](#install-apk-in-vr)
+- [3. SideQuest](#sidequest)
+  - [3.1 Sign in/up](#sign-inup)
+  - [3.2 connect to VR](#connect-to-vr)
+  - [3.3 Upload APK file to VR](#upload-apk-file-to-vr)
+- [4. VR](#vr)
+- [5. ADB installation](#adb-installation)
+  - [5.1 check linux version](#check-linux-version)
+  - [5.2 check adb version](#check-adb-version)
+  - [5.3 install adb](#install-adb)
+  - [5.3.1 通过包管理器安装（推荐新手）](#adb-install-by-package-manager)
+- [6. get vr info](#get-vr-info)
+- [7. teleoperation](#teleoperation)
+
+<a id="meta-sidequest-software-installation"></a>
 ## 1. Meta SideQuest Softare Installation
 根据实际电脑系统选择对应的软件安装
+<a id="windows"></a>
 ### 1.1 Windows
 software can find in `release/SideQuest-Setup-0.10.39-x64-win.exe`
+<a id="mac"></a>
 ### 1.2 Mac
 software can find in `release/SideQuest-0.10.42.dmg`
 
+<a id="install-apk-in-vr"></a>
 ## 2. install apk in VR
 software can find in `release/app1_16_vis_quest_xyz_final_version.apk`
 
+<a id="sidequest"></a>
 ## 3. SideQuest
 安装后打开界面，点击左下角注册登录
 
 <img src='img/1.png'>
 
+<a id="sign-inup"></a>
 ### 3.1 Sign in/up
 先注册登录
 <img src='img/2.png'>
@@ -26,6 +51,7 @@ https://developer.oculus.com/sign-up/
 选择Sign up，输入账号密码
 这里因为要进入开发者模式，所以会有双重验证，选择手机号验证
 
+<a id="connect-to-vr"></a>
 ### 3.2 connect to VR
 
 用type-c线连接VR和PC，然后左上角可以显示连接设备型号，右边显示连接状态
@@ -66,18 +92,22 @@ https://developer.oculus.com/sign-up/
   </tr>
 </table>
 
+<a id="upload-apk-file-to-vr"></a>
 ### 3.3 Upload APK file to VR 
 <img src='img/9.png'>
 
 红色箭头位置点击选择`APK`文件(path: `APP/app1_16_vis_quest_xyz_final_version.apk`)上传给VR设备，上传完成后会在左下角显示`ALL tasks completed`
 
+<a id="vr"></a>
 ## 4. VR
 VR打开后在右下角菜单栏里点击未知来源里查看安装的APK
 
+<a id="adb-installation"></a>
 ## 5. ADB installation
 ### reference
 https://geek-blogs.com/blog/installing-adb-on-linux/
 
+<a id="check-linux-version"></a>
 ### 5.1 check linux version
 ADB 的安装方式因 Linux 发行版而异。请先确认你的系统版本（如 Ubuntu、Fedora、Arch 等），可通过以下命令查看：
 ```
@@ -99,6 +129,7 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 UBUNTU_CODENAME=jammy
 ```
 
+<a id="check-adb-version"></a>
 ### 5.2 check adb version
 ```
 adb --version
@@ -115,7 +146,9 @@ Installed as /usr/lib/android-sdk/platform-tools/adb
 ```
 若输出类似 `Android Debug Bridge version 1.0.41` 的信息，则说明已安装，可跳过安装步骤直接进入 配置环节。
 
+<a id="install-adb"></a>
 ### 5.3 install adb
+<a id="adb-install-by-package-manager"></a>
 #### 5.3.1 通过包管理器安装（推荐新手）
 Linux 主流发行版的官方软件仓库中通常包含 ADB 工具（包名多为 `android-tools` 或 `android-tools-adb`），通过包管理器安装可自动处理依赖和环境变量，适合新手。
 
@@ -369,10 +402,12 @@ source ~/.bashrc
 chmod +x ~/android-sdk/platform-tools/adb
 ```
 
+<a id="get-vr-info"></a>
 ## 6. get vr info
 ```
 python vr/quest_pose.py
 ```
+<a id="teleoperation"></a>
 ## 7. teleoperation 
 ```
 python teleoperation/quest_xarm.py
